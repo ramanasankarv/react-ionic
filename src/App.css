@@ -12,6 +12,37 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+body {
+  font-family: Almarai;
+}
+.border ion-col,.border ion-delete-button {
+  border: 1px solid grey;
+  text-align: center;
+}
+.width200 {
+  min-width: 12%;
+}
+.width100 {
+  min-width: 6%;
+}
+
+.width300 {
+  min-width: 17%;
+}
+
+.mobile .class-header{
+  width: 10%;
+}
+.mobile .with90{
+  width: 90%;
+}
+.fullwidth{
+  width: 90%;
+  font-size: 10px;
+}
+.fullrow{
+  width: 100%;
+}
 
 .App-header {
   background-color: #282c34;
