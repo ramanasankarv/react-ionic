@@ -767,7 +767,194 @@ const getDashboardData = async () => {
     
   };
 
+const getSourceData = async () => {
+  let data = null;
+  data = [ {
+    "id" : 1,
+    "source" : "0ptimus.com",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "system",
+    "createdDate" : "2021-10-14T19:43:18Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-11-27T17:10:24Z"
+  }, {
+    "id" : 1118,
+    "source" : "1079ishot.com",
+    "remediate" : true,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-10-19T06:57:55Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-11-27T10:13:42Z"
+  }, {
+    "id" : 735,
+    "source" : "10star.tools",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-10-15T15:52:59Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-10-15T15:52:59Z"
+  }, {
+    "id" : 1466,
+    "source" : "123helpme.com",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-10-27T04:26:16Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-10-27T04:26:16Z"
+  }, {
+    "id" : 1829,
+    "source" : "1460espnyakima.com",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-11-24T07:48:41Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-11-24T07:48:41Z"
+  }, {
+    "id" : 1733,
+    "source" : "18.210.205.149",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-11-24T06:22:12Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-11-24T06:22:12Z"
+  }, {
+    "id" : 1734,
+    "source" : "18.214.172.238",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-11-24T06:22:12Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-11-24T06:22:12Z"
+  }, {
+    "id" : 2,
+    "source" : "180bytwo.com",
+    "remediate" : true,
+    "unknownSource" : false,
+    "createdBy" : "system",
+    "createdDate" : "2021-10-14T19:43:18Z",
+    "lastModifiedBy" : "system",
+    "lastModifiedDate" : "2021-10-14T19:43:18Z"
+  }, {
+    "id" : 1674,
+    "source" : "1library.net",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-11-23T14:28:36Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-11-23T14:28:36Z"
+  }, {
+    "id" : 1900,
+    "source" : "2020kingtee.com",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-11-24T07:48:42Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-11-24T07:48:42Z"
+  }, {
+    "id" : 1893,
+    "source" : "247sports.com",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-11-24T07:48:42Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-11-24T07:48:42Z"
+  }, {
+    "id" : 1474,
+    "source" : "247wallst.com",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-10-27T04:26:16Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-10-27T04:26:16Z"
+  }, {
+    "id" : 939,
+    "source" : "3.221.206.0",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-10-16T07:56:35Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-10-16T07:56:35Z"
+  }, {
+    "id" : 3,
+    "source" : "33across.com",
+    "remediate" : true,
+    "unknownSource" : false,
+    "createdBy" : "system",
+    "createdDate" : "2021-10-14T19:43:18Z",
+    "lastModifiedBy" : "system",
+    "lastModifiedDate" : "2021-10-14T19:43:18Z"
+  }, {
+    "id" : 4,
+    "source" : "33mileradius.com",
+    "remediate" : true,
+    "unknownSource" : false,
+    "createdBy" : "system",
+    "createdDate" : "2021-10-14T19:43:18Z",
+    "lastModifiedBy" : "system",
+    "lastModifiedDate" : "2021-10-14T19:43:18Z"
+  }, {
+    "id" : 5,
+    "source" : "360mediadirect.com",
+    "remediate" : true,
+    "unknownSource" : false,
+    "createdBy" : "system",
+    "createdDate" : "2021-10-14T19:43:18Z",
+    "lastModifiedBy" : "system",
+    "lastModifiedDate" : "2021-10-14T19:43:18Z"
+  }, {
+    "id" : 1056,
+    "source" : "360wichita.com",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-10-19T06:57:55Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-10-19T06:57:55Z"
+  }, {
+    "id" : 962,
+    "source" : "4.sexo-mag-jerk.cloud",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-10-17T11:01:04Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-10-17T11:01:04Z"
+  }, {
+    "id" : 985,
+    "source" : "419.bittenus.com",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-10-19T06:57:54Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-10-19T06:57:54Z"
+  }, {
+    "id" : 961,
+    "source" : "42.free-wap-news.agency",
+    "remediate" : false,
+    "unknownSource" : true,
+    "createdBy" : "admin",
+    "createdDate" : "2021-10-17T11:01:00Z",
+    "lastModifiedBy" : "admin",
+    "lastModifiedDate" : "2021-10-17T11:01:00Z"
+  } ];
+  return data;
+};
+
 export {
     getDashboardData,
+    getSourceData,
 };
   

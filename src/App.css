@@ -56,6 +56,7 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: auto;
 }
 .width200 {
   min-width: 12%;
@@ -106,3 +107,66 @@ h1{
     transform: rotate(360deg);
   }
 }
+
+ion-toggle {
+  width:60px;
+  height:30px;
+  margin-bottom: 6px;
+  position: relative;
+  font-size: 20px;
+  line-height: 55px;
+
+  --background: #92949c;
+  --background-checked: #556ee6;
+
+  --handle-background: #ffffff;
+  --handle-background-checked: #ffffff;
+}
+
+ion-toggle[aria-checked="false"]::after{
+  position: absolute;
+  content: "off";
+  top: 0;
+  left: 40px;
+
+}
+ion-toggle[aria-checked="true"]::after {
+  position: absolute;
+  content: "on";
+  top: 0;
+  left:15px;
+}
+
+.custom-popover ion-select-popover ion-list {
+  background: black;
+}
+
+.custom-popover ion-select-popover ion-item {
+  --background: black;
+  --color: #fff;
+  --inner-border-width: 0;
+}
+
+.custom-popover ion-select-popover ion-radio {
+  --color: #a61134;
+  --color-checked: #4550f5;
+}
+.myClass {
+  background-color: black;
+  color:#fff;
+  border-radius: 5px;
+  padding:10px;
+  opacity: 1 !important;
+}
+.select-text{
+  color: #fff !important;
+  opacity: 1 !important;
+}
+.select-icon {
+    opacity: 1 !important;
+}
+.select-placeholder{
+  opacity: 1 !important;
+}
+
+

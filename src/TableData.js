@@ -46,6 +46,29 @@ const columns = [
     },
 ];
 
+const source_columns = [
+    {
+        id: 'source',
+        label: 'Source',
+        class: 'width100'
+    },
+    {
+        id: 'remediate',
+        label: 'Remediate',
+        class: 'width300'
+    },
+    {
+        id: 'unknownSource',
+        label: 'Unknown Source',
+        class: 'width100'
+    },
+    {
+        id: 'createdDate',
+        label: 'Created Date',
+        class: 'width300'
+    }
+];
 
 
-export { columns };
+
+export { columns,source_columns };

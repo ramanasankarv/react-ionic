@@ -3,17 +3,17 @@ import { Route, Redirect } from "react-router-dom";
 
 import { IonApp, IonRouterOutlet, IonLoading, IonButton, IonToggle } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
+import moment from 'moment'
 
-
-import { getDashboardData } from "./Api"
-import { columns } from './TableData';
+import { getSourceData } from "./Api"
+import { source_columns } from './TableData';
 
 import "./App.css";
 
 function App() {
   const [rows, setRows] = useState([]);
   useEffect(() => {
-    getDashboardData().then((res) => {
+    getSourceData().then((res) => {
       console.log(res);
       setRows(res);
     })
@@ -36,13 +36,13 @@ function App() {
       <ion-content class="ion-padding-horizontal">
         <ion-title class="ion-no-padding pl5">
           <ion-text class="pl5 ion-no-padding" color="default">
-          <h1>Sample data table</h1>
+          <h1>Flag Sources</h1>
           </ion-text>
         </ion-title>
             
-        <ion-grid class="ion-hide-lg-down pl5 ion-no-padding ion-text-center border">
+        <ion-grid class="pl5 ion-no-padding ion-text-center border">
           <ion-row class="header-row">
-            {columns.map((column) => (
+            {source_columns.map((column) => (
                 <ion-col class={column.class}>
                     <ion-text>{column.label}</ion-text>
                   </ion-col>
@@ -52,139 +52,57 @@ function App() {
                 .map((row,i) => {
                     return (
                         <ion-row style={{backgroundColor:i%2==0?"#eee":"#fff"}}>
-                            {columns.map((column) => {
+                            {source_columns.map((column) => {
                                 let columnValue = row.hasOwnProperty(column.id)
                                 let value= row[column.id]
-                                let limit=40
-                                if(list.find(element => element == column.label)){
-                                  console.log("find")
-                                  if(column.label=="Category" || column.label=="Flag" || column.label=="Priority")
-                                  {
-                                    let category=row["category"]
-                                    if(column.label=="Category")
-                                      value=category.flagType
-                                    else if(column.label=="Flag")
-                                      value=category.flagTypeValue
-                                    else
-                                    value=category.flagSeverity
-                                  }
-                                  else if(column.label=='User Name' || column.label=='User Email'){
-                                    let category=row["familyMember"]
-                                    if(column.label=="User Name")
-                                      value=category.firstName
-                                    else if(column.label=="User Email")
-                                      value=category.email 
-                                  }
-                                }
-                                if(column.label!="Url"){
-                                  if(String(value).length>limit){
-                                    value = value.substring(0,limit)+"...";
-                                  }
-                                }
-                                
-                                if(column.label=="Url"){
+                                if(column.label=="Remediate" && value){
                                   return (
-                                      <ion-col class={column.class} >
-                                          <ion-text><a href={value} target="_blank">Link</a></ion-text>
-                                      </ion-col>   
-                                  );
-                                }else if(column.label!="Delete"){
+                                    <ion-col class={column.class} >
+                                        <ion-toggle ion-toggle-text checked={true} toggle-class="toggle-my-theme"></ion-toggle>
+                                    </ion-col>
+                                  );  
+                                }else if(column.label=="Remediate" && !value){
+                                  return (
+                                    <ion-col class={column.class} >
+                                        <ion-toggle ion-toggle-text toggle-class="toggle-my-theme"></ion-toggle>
+                                    </ion-col>
+                                  );  
+                                }else if(column.label=="Unknown Source"){
+                                  let txt="Known"
+                                  if(value)
+                                    txt="Unknown"
+
+                                  return (
+                                    <ion-col class={column.class} >
+                                        <ion-select placeholder={txt} interface="popover" class='myClass'>
+                                          <ion-select-option value="false">Unknown</ion-select-option>
+                                          <ion-select-option selected value="true">Known</ion-select-option>
+                                        </ion-select>
+                                    </ion-col>
+                                  );  
+                                }else if(column.label=="Created Date"){
+                                  
+                                    let txt=moment(value).format('MMMM Do YYYY')
+
+                                  return (
+                                    <ion-col class={column.class} >
+                                        {txt}
+                                    </ion-col>
+                                  );  
+                                }else{
                                   return (
                                     <ion-col class={column.class} >
                                         {value}
                                     </ion-col>
-                                  );
-                                }else{
-                                  return (
-                                    <ion-col class={column.class} >
-                                        <IonButton color="primary" class="fullwidth">
-                                          <span class="d-none d-md-inline">Delete</span>
-                                        </IonButton>
-                                    </ion-col>
                                   ); 
-                                }
+                                }                                
+                                  
+                                
                             })}
                         </ion-row>
                     );
                 }) : <ion-row><ion-col>No Data</ion-col></ion-row>}
         </ion-grid>
-
-        <ion-grid class="ion-hide-lg-up mobile"> 
-        {rows && rows.length > 0 ? rows
-                .map((row,i) => {
-                    return (  
-                      <ion-row style={{backgroundColor:i%2==0?"#eee":"#fff"}}>
-                            {columns.map((column) => {
-                                let columnValue = row.hasOwnProperty(column.id)
-                                let value= row[column.id]
-                                let limit=40
-                                if(list.find(element => element == column.label)){
-                                  console.log("find")
-                                  if(column.label=="Category" || column.label=="Flag" || column.label=="Priority")
-                                  {
-                                    let category=row["category"]
-                                    if(column.label=="Category")
-                                      value=category.flagType
-                                    else if(column.label=="Flag")
-                                      value=category.flagTypeValue
-                                    else
-                                    value=category.flagSeverity
-                                  }
-                                  else if(column.label=='User Name' || column.label=='User Email'){
-                                    let category=row["familyMember"]
-                                    if(column.label=="User Name")
-                                      value=category.firstName
-                                    else if(column.label=="User Email")
-                                      value=category.email 
-                                  }
-                                }
-                                if(column.label!="Url"){
-                                  if(String(value).length>limit){
-                                    value = value.substring(0,limit)+"...";
-                                  }
-                                }
-                                
-                                if(column.label=="Url"){
-                                  return (
-                                    <ion-row class="fullrow">
-                                      <ion-col size="3" class="class-header" >
-                                          <ion-text>Url</ion-text>
-                                      </ion-col>
-                                      <ion-col size="9">
-                                          <ion-text><a href={value} target="_blank">Link</a></ion-text>
-                                      </ion-col> 
-                                    </ion-row>  
-                                  );
-                                }else if(column.label!="Delete"){
-                                  return (
-                                    <ion-row class="fullrow">
-                                      <ion-col size="3"  class="class-header">
-                                        <ion-text>{column.label}</ion-text>
-                                      </ion-col>
-                                      <ion-col size="9">
-                                          {value}
-                                      </ion-col>
-                                    </ion-row>
-                                  );
-                                }else{
-                                  return (
-                                    <ion-row class="fullrow">
-                                      <ion-col size="3"  class="class-header">
-                                          
-                                      </ion-col>
-                                      <ion-col size="9" class={column.class} >
-                                        <IonButton color="primary" class="fullwidth">
-                                          <span class="d-none d-md-inline">Delete</span>
-                                        </IonButton> 
-                                      </ion-col>
-                                    </ion-row>
-                                  ); 
-                                }
-                            })}
-                        </ion-row>
-                      );
-                }) : <ion-row><ion-col>No Data</ion-col></ion-row>}
-        </ion-grid> 
               
       </ion-content>
       <ion-footer class="ion-no-border">
