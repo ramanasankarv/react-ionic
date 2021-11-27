@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@200;300;400;500;600;700;800;900&display=swap');
 .App {
   text-align: center;
 }
@@ -13,11 +19,43 @@
   }
 }
 body {
-  font-family: Almarai;
+  font-family: 'Almarai';
+  font-weight: 400;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum";
 }
+
+.header-row ion-col{
+    background-color: black;
+    color: #fff;
+    padding:10px !important;
+}
+
+ion-row{
+  min-height: 45px;
+}
+
+
+
+h1{
+  font-family: 'Questrial' !important;
+  font-weight: 400;
+  font-size: 32px;
+}
+
+.pl5{
+  padding-left: 5px !important;
+}
+
 .border ion-col,.border ion-delete-button {
   border: 1px solid grey;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .width200 {
   min-width: 12%;
@@ -36,6 +74,7 @@ body {
 .mobile .with90{
   width: 90%;
 }
+
 .fullwidth{
   width: 90%;
   font-size: 10px;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 
-import { IonApp, IonRouterOutlet, IonLoading, IonButton,IonListHeader, IonList, IonLabel, IonItem } from "@ionic/react";
+import { IonApp, IonRouterOutlet, IonLoading, IonButton, IonToggle } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
 
@@ -34,13 +34,13 @@ function App() {
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding-horizontal">
-        <ion-title class="ion-no-padding">
-          <ion-text class="ion-no-padding" color="default">
+        <ion-title class="ion-no-padding pl5">
+          <ion-text class="pl5 ion-no-padding" color="default">
           <h1>Sample data table</h1>
           </ion-text>
         </ion-title>
             
-        <ion-grid class="ion-hide-lg-down ion-text-center border">
+        <ion-grid class="ion-hide-lg-down pl5 ion-no-padding ion-text-center border">
           <ion-row class="header-row">
             {columns.map((column) => (
                 <ion-col class={column.class}>
@@ -99,8 +99,8 @@ function App() {
                                     <ion-col class={column.class} >
                                         <IonButton color="primary" class="fullwidth">
                                           <span class="d-none d-md-inline">Delete</span>
-                                        </IonButton> 
-                                      </ion-col>
+                                        </IonButton>
+                                    </ion-col>
                                   ); 
                                 }
                             })}

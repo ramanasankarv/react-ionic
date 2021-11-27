@@ -42,12 +42,7 @@ const columns = [
     {
         id:'familyMember.email',
         label:'User Email',
-        class: 'width200'
-    },
-    {
-        id:'delete',
-        label:'Delete',
-        class: 'width100'
+        class: 'width300'
     },
 ];
 

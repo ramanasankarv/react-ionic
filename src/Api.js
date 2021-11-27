@@ -47,7 +47,7 @@ const getDashboardData = async () => {
         "snippet" : "How NOT To Raise Your Children --… · Underwater two air rings bubbles… · DuPont Appoints Amy G. Brady to Board…",
         "category" : {
           "id" : 18,
-          "flagType" : "SOCIAL_MEDIA",
+          "flagType" : "SOCIAL MEDIA",
           "flagSeverity" : "LOW",
           "flagCount" : null,
           "categoryDescription" : "Social media platforms allow attackers to find personal information that can be used to target specific individuals. ... This social media threat is an example of social engineering tactics, whereby attackers exploit fear and anxiety, instead of system vulnerability to get users to part with their money.",
@@ -275,7 +275,7 @@ const getDashboardData = async () => {
         "snippet" : "Mar 7, 2019 - Reading Shoe Dog, a memoir by Phil Knight, this semester has taught me about the ... Beaverton, Oregon ... Phil Knight cofounder of NIKE!",
         "category" : {
           "id" : 18,
-          "flagType" : "SOCIAL_MEDIA",
+          "flagType" : "SOCIAL MEDIA",
           "flagSeverity" : "LOW",
           "flagCount" : null,
           "categoryDescription" : "Social media platforms allow attackers to find personal information that can be used to target specific individuals. ... This social media threat is an example of social engineering tactics, whereby attackers exploit fear and anxiety, instead of system vulnerability to get users to part with their money.",
@@ -313,7 +313,7 @@ const getDashboardData = async () => {
         "snippet" : "linkedin URL",
         "category" : {
           "id" : 18,
-          "flagType" : "SOCIAL_MEDIA",
+          "flagType" : "SOCIAL MEDIA",
           "flagSeverity" : "LOW",
           "flagCount" : null,
           "categoryDescription" : "Social media platforms allow attackers to find personal information that can be used to target specific individuals. ... This social media threat is an example of social engineering tactics, whereby attackers exploit fear and anxiety, instead of system vulnerability to get users to part with their money.",
@@ -351,7 +351,7 @@ const getDashboardData = async () => {
         "snippet" : "Oct 17, 2014 - Phil Knight, @Nike Co-founder & chairman of #Nike Inc.- #design, #development, #manufacturing and worldwide #marketing and #selling of ...",
         "category" : {
           "id" : 18,
-          "flagType" : "SOCIAL_MEDIA",
+          "flagType" : "SOCIAL MEDIA",
           "flagSeverity" : "LOW",
           "flagCount" : null,
           "categoryDescription" : "Social media platforms allow attackers to find personal information that can be used to target specific individuals. ... This social media threat is an example of social engineering tactics, whereby attackers exploit fear and anxiety, instead of system vulnerability to get users to part with their money.",
@@ -693,7 +693,7 @@ const getDashboardData = async () => {
         "snippet" : "crunchbase URL",
         "category" : {
           "id" : 18,
-          "flagType" : "SOCIAL_MEDIA",
+          "flagType" : "SOCIAL MEDIA",
           "flagSeverity" : "LOW",
           "flagCount" : null,
           "categoryDescription" : "Social media platforms allow attackers to find personal information that can be used to target specific individuals. ... This social media threat is an example of social engineering tactics, whereby attackers exploit fear and anxiety, instead of system vulnerability to get users to part with their money.",
