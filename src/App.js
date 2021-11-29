@@ -34,13 +34,14 @@ function App() {
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding-horizontal">
-        <ion-title class="ion-no-padding pl5">
+        
+        <ion-title class="ion-hide-sm-down ion-no-padding pl5">
           <ion-text class="pl5 ion-no-padding" color="default">
           <h1>Flag Sources</h1>
           </ion-text>
         </ion-title>
             
-        <ion-grid class="pl5 ion-no-padding ion-text-center border">
+        <ion-grid class="pl5 ion-no-padding ion-hide-sm-down ion-text-center border">
           <ion-row class="header-row">
             {source_columns.map((column) => (
                 <ion-col class={column.class}>
@@ -103,7 +104,91 @@ function App() {
                     );
                 }) : <ion-row><ion-col>No Data</ion-col></ion-row>}
         </ion-grid>
-              
+
+        <ion-grid class="ion-hide-sm-up mobile"> 
+        {rows && rows.length > 0 ? rows
+                .map((row,i) => {
+                    return (  
+                      <ion-row style={{backgroundColor:i%2==0?"#eee":"#fff"}}>
+                            {source_columns.map((column) => {
+                                let columnValue = row.hasOwnProperty(column.id)
+                                let value= row[column.id]
+                                let limit=40
+                                if(list.find(element => element == column.label)){
+                                  console.log("find")
+                                  
+                                }
+                                if(column.label=="Remediate" && value){
+                                  return (
+                                    <ion-row class="fullrow">
+                                      <ion-col size="4" class="class-header" >
+                                          <ion-text>{column.label}</ion-text>
+                                      </ion-col>
+                                      <ion-col size="8">
+                                          <ion-toggle ion-toggle-text checked={true} toggle-class="toggle-my-theme"></ion-toggle>
+                                      </ion-col>
+                                    </ion-row>
+                                  );  
+                                }else if(column.label=="Remediate" && !value){
+                                  return (
+                                    <ion-row class="fullrow">
+                                      <ion-col size="4" class="class-header" >
+                                          <ion-text>{column.label}</ion-text>
+                                      </ion-col>
+                                      <ion-col size="8">
+                                        <ion-toggle ion-toggle-text toggle-class="toggle-my-theme"></ion-toggle>
+                                      </ion-col>
+                                    </ion-row>
+                                  );  
+                                }else if(column.label=="Unknown Source"){
+                                  let txt="Known"
+                                  if(value)
+                                    txt="Unknown"
+
+                                  return (
+                                    <ion-row class="fullrow">
+                                      <ion-col size="4" class="class-header" >
+                                          <ion-text>{column.label}</ion-text>
+                                      </ion-col>
+                                      <ion-col size="8">
+                                        <ion-select placeholder={txt} interface="popover" class='myClass'>
+                                          <ion-select-option value="false">Unknown</ion-select-option>
+                                          <ion-select-option selected value="true">Known</ion-select-option>
+                                        </ion-select>
+                                    </ion-col>
+                                    </ion-row>
+                                  );  
+                                }else if(column.label=="Created Date"){
+                                  
+                                    let txt=moment(value).format('MMMM Do YYYY')
+
+                                  return (
+                                    <ion-row class="fullrow">
+                                      <ion-col size="4" class="class-header" >
+                                          <ion-text>{column.label}</ion-text>
+                                      </ion-col>
+                                      <ion-col size="8">
+                                        {txt}
+                                      </ion-col>
+                                    </ion-row>
+                                  );  
+                                }else{
+                                  return (
+                                    <ion-row class="fullrow">
+                                      <ion-col size="4" class="class-header" >
+                                          <ion-text>{column.label}</ion-text>
+                                      </ion-col>
+                                      <ion-col size="8">
+                                        {value}
+                                      </ion-col>
+                                      </ion-row>
+                                  ); 
+                                }
+                            })}
+                        </ion-row>
+                      );
+                }) : <ion-row><ion-col>No Data</ion-col></ion-row>}
+        </ion-grid>       
       </ion-content>
       <ion-footer class="ion-no-border">
         <ion-toolbar>
